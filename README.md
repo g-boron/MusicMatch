@@ -12,4 +12,10 @@ Only logged users can vote for songs. If you don't have account, create it via r
 
 On the home page there is introduction and list of top 5 songs in terms of votes.
 
+![My Image](readme_img/home1.PNG)
+
+![My Image](readme_img/home2.PNG)
+
 On the vote page logged user can vote for song by clicking thumb up icon, if user doesn't like song anymore it is possible to click thumb down icon to unlike the song.
+
+![My Image](readme_img/vote.PNG)
