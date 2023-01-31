@@ -1,0 +1,45 @@
+{% extends 'rating/base_generic.html' %}
+
+{% block content %}
+    {% if messages %}
+    {% for message in messages %}
+    <div class="container-fluid p-0">
+    <div class="alert {{ message.tags }} alert-dismissible" role="alert" >
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="True">&times;</span>
+        </button>
+        {{ message }}
+    </div>
+    </div>
+    {% endfor %}
+    {% endif %}
+    
+    <div class="content">
+        <div class="container">
+            <h1 class="display-4 text-center mb-5">Hello, welcome to MusicMatch!</h1>
+            <p>MusicMatch is a website where you can browse added songs and vote for that you like. You can see below ratings and position of tracks.</p>
+            <h1 class="display-5 text-center mt-5">It takes only three steps to start voting!</h1>
+
+            <ul class="list-group list-group-flush bg-transparent my-5">
+                <li class="list-group-item bg-transparent border-white">Register new account. / Log in.</li>
+                <li class="list-group-item bg-transparent border-white">Look at songs.</li>
+                <li class="list-group-item bg-transparent border-white">Vote!</li>
+            </ul>
+        </div>
+    </div>
+    <div class="container text-center">
+        <h1 class="display-3">Top 5 songs</h1>
+        <div class="message">
+            <p>{{ message }}</p>
+        </div>
+            {% for song in popular_songs %}
+            <div class="song mt-5" style="background-color: #36334f;">
+                <h1 class="display-4 text-left p-3">{{ forloop.counter }}</h1>
+                <img src="{{ song.cover.url }}" alt="Cover image" style="width: 250px; height: 250px;">
+                <h3>{{ song.name }}</h3>
+                <p>{{ song.artist }}</p>
+                <p class="pb-3">Votes: {{ song.votes }}</p>
+            </div>
+            {% endfor %}
+    </div>
+{% endblock %}
